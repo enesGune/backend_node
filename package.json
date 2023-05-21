@@ -1,14 +1,19 @@
 {
-  "name": "git",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
-  "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "morgan": "~1.9.1"
-  }
+    "name": "git",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "start": ".\\node_modules\\.bin\\nodemon --exec babel-node .\\bin\\www",
+        "generate-models": ".\\node_modules\\.bin\\sequelize-auto -o \".\\superModels\" -d /*YOUR DB USER*/ -h /*YOUR DB HOST*/ -u /*YOUR DB USER*/ -p /*YOUR DB PORT*/ -x /*YOUR DB PASSWORD*/ -e mysql"
+
+    },
+    "dependencies": {
+        "cookie-parser": "~1.4.4",
+        "debug": "~2.6.9",
+        "dotenv": "^16.0.3",
+        "express": "~4.16.1",
+        "morgan": "~1.9.1",
+        "nodemon": "^2.0.22",
+        "sequelize-auto": "^0.8.8"
+    }
 }
